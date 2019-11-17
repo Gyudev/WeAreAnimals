@@ -250,6 +250,7 @@ GameObject:
   - component: {fileID: 586339725}
   - component: {fileID: 586339724}
   - component: {fileID: 586339727}
+  - component: {fileID: 586339728}
   m_Layer: 0
   m_Name: TestPlayer
   m_TagString: Player
@@ -355,7 +356,22 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
+--- !u!114 &586339728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586339723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62004a58106b74a439eea793f9e8b3aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 8711233419314317752, guid: 32d56d96ba457234db7fdb8d4a6857c7,
+    type: 3}
+  spawnBullet: 0.7
 --- !u!1 &1227080942
 GameObject:
   m_ObjectHideFlags: 0
@@ -741,6 +757,7 @@ GameObject:
   - component: {fileID: 2115500346}
   - component: {fileID: 2115500345}
   - component: {fileID: 2115500348}
+  - component: {fileID: 2115500349}
   m_Layer: 0
   m_Name: TestMonster
   m_TagString: Monster
@@ -846,4 +863,16 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
+--- !u!114 &2115500349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2115500344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 513b922c485b7fd4b8d09344ff2decfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
