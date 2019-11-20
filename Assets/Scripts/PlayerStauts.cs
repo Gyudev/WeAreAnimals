@@ -5,16 +5,13 @@ using UnityEngine;
 public class PlayerStauts : MonoBehaviour
 {
 	public GameObject bulletPrefab;
-	//private GameObject player;
 
 	private float timeSpawnBullet;
 	private float playerHp = 10f;
 	public float spawnBullet = 1f;
-	private Transform targetMonster;
 
 	private void Awake()
 	{
-		targetMonster = FindObjectOfType<MonsterStatus>().transform;
 	}
 	private void Start()
 	{
