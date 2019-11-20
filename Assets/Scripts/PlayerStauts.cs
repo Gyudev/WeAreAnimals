@@ -8,6 +8,7 @@ public class PlayerStauts : MonoBehaviour
 	//private GameObject player;
 
 	private float timeSpawnBullet;
+	private float playerHp = 10f;
 	public float spawnBullet = 1f;
 	private Transform targetMonster;
 
