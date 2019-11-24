@@ -14,8 +14,11 @@ public class MonsterStatus : MonoBehaviour
 
 	public Image monsterHpBar;
 
+
 	private float timeSpawnBullet;
 	public float spawnBullet = 2f;
+
+	private bool isDie = false;
 
 	public float monsterHp { get; set; }
 	public float monsterDamage { get; set; }
@@ -34,11 +37,14 @@ public class MonsterStatus : MonoBehaviour
 
 	private void FixedUpdate()
 	{
-		timeSpawnBullet += Time.deltaTime;
-		if(spawnBullet <= timeSpawnBullet)
+		if (!isDie)
 		{
-			timeSpawnBullet = 0;
-			Attack();
+			timeSpawnBullet += Time.deltaTime;
+			if (spawnBullet <= timeSpawnBullet)
+			{
+				timeSpawnBullet = 0;
+				Attack();
+			}
 		}
 	}
 
@@ -57,6 +63,7 @@ public class MonsterStatus : MonoBehaviour
 
 	private void MonsterDie()
 	{
+		isDie = true;
 		monsterRigid.AddForce(new Vector2(300f, 100f));
 		Destroy(monster, 1f);
 	}
@@ -65,4 +72,5 @@ public class MonsterStatus : MonoBehaviour
 	{
 		GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
 	}
+
 }
