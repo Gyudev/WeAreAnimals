@@ -18,7 +18,7 @@ public class MonsterStatus : MonoBehaviour
 	private float timeSpawnBullet;
 	public float spawnBullet = 2f;
 
-	private bool isDie = false;
+	public bool isDie = false;
 
 	public float monsterHp { get; set; }
 	public float monsterDamage { get; set; }
@@ -37,7 +37,7 @@ public class MonsterStatus : MonoBehaviour
 
 	private void FixedUpdate()
 	{
-		if (!isDie)
+		if (!isDie || !playerStauts.isDie)
 		{
 			timeSpawnBullet += Time.deltaTime;
 			if (spawnBullet <= timeSpawnBullet)
