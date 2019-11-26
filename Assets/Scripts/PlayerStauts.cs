@@ -25,7 +25,7 @@ public class PlayerStauts : MonoBehaviour
 
 	public bool isDie = false;
 
-	public float playerHp	{ get; set;	}
+	public float playerHp { get; set; }
 	public float playerDamage { get; set; }
 
 	private void Awake()
@@ -54,28 +54,20 @@ public class PlayerStauts : MonoBehaviour
 			timeSpawnBullet += Time.deltaTime;
 			if (spawnBullet <= timeSpawnBullet)
 			{
-				timeSpawnBullet = 0f;
+				SetTimeZero();
 				Attack();
 			}
 		}
-
-		Debug.DrawRay(playerRigid.position, Vector3.down, new Color(0, 1, 0));
-
-		RaycastHit2D playerRayHit = Physics2D.Raycast(playerRigid.position, Vector3.down, 1, LayerMask.GetMask("Platform"));
-
-		if (playerRayHit.collider != null)
+		// 캐릭터가 다시 점프 할 수 있게 함
+		if (playerRigid.velocity.y == 0)
 		{
-
-			if (playerRayHit.distance < 0.62f)
-			{
-				playerAnim.SetBool("isJump", false);
-			}
+			playerAnim.SetBool("isJump", false);
 		}
 	}
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
-		if(collision.tag == "MonsterBullet")
+		if (collision.tag == "MonsterBullet")
 		{
 			playerHpBar.fillAmount -= monsterStatus.monsterDamage / playerHp;
 			if (playerHpBar.fillAmount <= 0.1f)
@@ -85,8 +77,14 @@ public class PlayerStauts : MonoBehaviour
 		}
 	}
 
+	private void SetTimeZero()
+	{
+		timeSpawnBullet = 0f;
+	}
+
 	private void PlayerDie()
 	{
+		SetTimeZero();
 		PlaySound("Die");
 		isDie = true;
 		playerRigid.AddForce(new Vector2(0f, 50f));
@@ -95,19 +93,24 @@ public class PlayerStauts : MonoBehaviour
 
 	private void Attack()
 	{
-		PlaySound("Attack");
-		playerAnim.SetTrigger("doAttack");
-		GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
+		if (!isDie)
+		{
+			PlaySound("Attack");
+			playerAnim.SetTrigger("doAttack");
+			GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
+		}
 	}
 
 	private void JumpButton()
 	{
+		SetTimeZero();
 		Jump();
 	}
 
 	private void Jump()
 	{
-		if (!playerAnim.GetBool("isJump"))
+		// 캐릭터의 y속도가 0이거나 죽지 않았을때 점프
+		if (playerRigid.velocity.y == 0 && !isDie)
 		{
 			playerAnim.SetBool("isJump", true);
 			PlaySound("Jump");

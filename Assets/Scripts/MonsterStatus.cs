@@ -27,7 +27,7 @@ public class MonsterStatus : MonoBehaviour
     {
 		monsterRigid = GetComponent<Rigidbody2D>();
 		monsterHp = 5f;
-		monsterDamage = 10f;
+		monsterDamage = 2f;
     }
 
     private void Update()
