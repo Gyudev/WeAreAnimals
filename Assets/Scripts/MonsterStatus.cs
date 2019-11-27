@@ -27,7 +27,7 @@ public class MonsterStatus : MonoBehaviour
     {
 		monsterRigid = GetComponent<Rigidbody2D>();
 		monsterHp = 5f;
-		monsterDamage = 2f;
+		monsterDamage = 10f;
     }
 
     private void Update()
@@ -42,7 +42,7 @@ public class MonsterStatus : MonoBehaviour
 			timeSpawnBullet += Time.deltaTime;
 			if (spawnBullet <= timeSpawnBullet)
 			{
-				timeSpawnBullet = 0;
+				ResetTime();
 				Attack();
 			}
 		}
@@ -60,9 +60,14 @@ public class MonsterStatus : MonoBehaviour
 			}
 		}
 	}
+	private void ResetTime()
+	{
+		timeSpawnBullet = 0;
+	}
 
 	private void MonsterDie()
 	{
+		ResetTime();
 		isDie = true;
 		monsterRigid.AddForce(new Vector2(300f, 100f));
 		Destroy(monster, 1f);
@@ -70,7 +75,14 @@ public class MonsterStatus : MonoBehaviour
 
 	private void Attack()
 	{
-		GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
+		if (!playerStauts.isDie)
+		{
+			GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
+		}
+		else
+		{
+			ResetTime();
+		}
 	}
 
 }

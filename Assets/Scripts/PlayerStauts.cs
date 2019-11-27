@@ -54,7 +54,7 @@ public class PlayerStauts : MonoBehaviour
 			timeSpawnBullet += Time.deltaTime;
 			if (spawnBullet <= timeSpawnBullet)
 			{
-				SetTimeZero();
+				ResetTime();
 				Attack();
 			}
 		}
@@ -77,14 +77,14 @@ public class PlayerStauts : MonoBehaviour
 		}
 	}
 
-	private void SetTimeZero()
+	private void ResetTime()
 	{
 		timeSpawnBullet = 0f;
 	}
 
 	private void PlayerDie()
 	{
-		SetTimeZero();
+		ResetTime();
 		PlaySound("Die");
 		isDie = true;
 		playerRigid.AddForce(new Vector2(0f, 50f));
@@ -103,7 +103,7 @@ public class PlayerStauts : MonoBehaviour
 
 	private void JumpButton()
 	{
-		SetTimeZero();
+		ResetTime();
 		Jump();
 	}
 
