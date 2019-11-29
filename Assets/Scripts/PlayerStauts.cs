@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class PlayerStauts : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class PlayerStauts : MonoBehaviour
 	public AudioClip audioAttack;
 	public AudioClip audioDie;
 
-	private Button jumpButton;
+	private EventTrigger jumpButton;
 
 	private float timeSpawnBullet;
 	public float spawnBullet = 1f;
@@ -32,8 +33,13 @@ public class PlayerStauts : MonoBehaviour
 	{
 		audioSource = GetComponent<AudioSource>();
 		playerAnim = GetComponent<Animator>();
-		jumpButton = GameObject.Find("Canvas").transform.Find("Jump Button").GetComponent<Button>();
-		jumpButton.onClick.AddListener(JumpButton);
+
+		jumpButton = GameObject.Find("Canvas").transform.Find("Jump Button").GetComponent<EventTrigger>();
+
+		EventTrigger.Entry jumpButtonClick = new EventTrigger.Entry();
+		jumpButtonClick.eventID = EventTriggerType.PointerDown;
+		jumpButtonClick.callback.AddListener((data) => { JumpButton((PointerEventData)data); });
+		jumpButton.triggers.Add(jumpButtonClick);
 	}
 
 	private void Start()
@@ -101,7 +107,7 @@ public class PlayerStauts : MonoBehaviour
 		}
 	}
 
-	private void JumpButton()
+	private void JumpButton(PointerEventData data)
 	{
 		ResetTime();
 		Jump();

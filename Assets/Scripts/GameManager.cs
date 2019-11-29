@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+		//Screen.SetResolution(1280, 720, true);
 		submenuPanel = GameObject.Find("Canvas").transform.Find("Submenu Panel").GetComponent<Transform>();
 		stopButton = GameObject.Find("Canvas").transform.Find("Stop Button").GetComponent<Button>();
 		stopButton.onClick.AddListener(StopButton);
