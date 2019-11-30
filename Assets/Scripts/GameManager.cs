@@ -46,31 +46,19 @@ public class GameManager : MonoBehaviour
 		// 계속하기를 눌렀을 때 카운트 다운
 		if (isStop)
 		{
+			isStop = false;
 			StartCoroutine(CountdownTimer(4));
-
-
-			/*countdown -= Time.deltaTime;
-			countdownText.text = countdown.ToString();
-
-			if (countdown <= 0)
-			{
-				submenu.gameObject.SetActive(true);
-				submenuPanel.gameObject.SetActive(false);
-				Time.timeScale = 1;
-				isStop = false;
-			}*/
 		}
     }
 
 	IEnumerator CountdownTimer(float countTime)
 	{
 		float lastTime = Time.realtimeSinceStartup;
-		float processTime = 1f;
+		float processTime = 0;
 		float countdown = 0;
 
-		while(processTime <= countTime)
+		while(processTime + 1f <= countTime)
 		{
-			Debug.Log("processTime :" + processTime + " countdown :" + countdown);
 			processTime = Time.realtimeSinceStartup - lastTime;
 			countdown = countTime - processTime;
 			countdown = (int)countdown;
