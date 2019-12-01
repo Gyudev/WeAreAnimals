@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
 
 	private Text countdownText;
 	
-	private bool isStop = false;
+	private bool isStop = true;
 
 	private void Awake()
     {
@@ -40,8 +40,13 @@ public class GameManager : MonoBehaviour
 		countdownText = submenuPanel.transform.Find("Countdown").GetComponent<Text>();
 	}
 
-    
-    private void Update()
+	private void Start()
+	{
+		Time.timeScale = 0;
+	}
+
+
+	private void Update()
     {
 		// 계속하기를 눌렀을 때 카운트 다운
 		if (isStop)
@@ -57,7 +62,7 @@ public class GameManager : MonoBehaviour
 		float processTime = 0;
 		float countdown = 0;
 
-		while(processTime + 1f <= countTime)
+		while(processTime + 1.1f <= countTime)
 		{
 			processTime = Time.realtimeSinceStartup - lastTime;
 			countdown = countTime - processTime;
