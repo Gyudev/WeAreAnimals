@@ -45,7 +45,7 @@ public class PlayerStauts : MonoBehaviour
 	private void Start()
 	{
 		playerHp = 10f;
-		playerDamage = 1f;
+		playerDamage = 10f;
 	}
 
 	private void Update()
@@ -99,7 +99,7 @@ public class PlayerStauts : MonoBehaviour
 
 	private void Attack()
 	{
-		if (!isDie)
+		if (!isDie && !monsterStatus.isDie)
 		{
 			PlaySound("Attack");
 			playerAnim.SetTrigger("doAttack");

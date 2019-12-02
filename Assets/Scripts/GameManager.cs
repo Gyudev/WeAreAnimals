@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,13 +15,21 @@ public class GameManager : MonoBehaviour
 	private Button restartButton;
 	private Button exitButton;
 
+	public GameObject coinTarget;
+	public GameObject stoneTarget;
+
+	public Text coinText;
+	public Text stoneText;
+
 	private Text countdownText;
+
+	private int coin;
+	private int stone;
 	
 	private bool isStop = true;
 
 	private void Awake()
     {
-		//Screen.SetResolution(1280, 720, true);
 		submenuPanel = GameObject.Find("Canvas").transform.Find("Submenu Panel").GetComponent<Transform>();
 		submenu = submenuPanel.transform.Find("Submenu").GetComponent<Transform>();
 
@@ -43,6 +52,10 @@ public class GameManager : MonoBehaviour
 	private void Start()
 	{
 		Time.timeScale = 0;
+		coin = 0;
+		stone = 0;
+		coinText.text = coin.ToString();
+		stoneText.text = stone.ToString();
 	}
 
 
@@ -58,6 +71,7 @@ public class GameManager : MonoBehaviour
 
 	IEnumerator CountdownTimer(float countTime)
 	{
+		//3초 카운트 다운
 		float lastTime = Time.realtimeSinceStartup;
 		float processTime = 0;
 		float countdown = 0;
@@ -68,7 +82,7 @@ public class GameManager : MonoBehaviour
 			countdown = countTime - processTime;
 			countdown = (int)countdown;
 			countdownText.text = countdown.ToString();
-			Debug.Log((int)countdown);
+
 			yield return null;
 		}
 		submenu.gameObject.SetActive(true);
@@ -95,7 +109,19 @@ public class GameManager : MonoBehaviour
 
 	private void RestartButton()
 	{
+		SceneManager.LoadScene(0);
+	}
 
+	public void AddCoin()
+	{
+		coin += 10;
+		coinText.text = coin.ToString();
+	}
+
+	public void AddStone()
+	{
+		stone += 1;
+		stoneText.text = stone.ToString();
 	}
 
 	private void ExitButton()
