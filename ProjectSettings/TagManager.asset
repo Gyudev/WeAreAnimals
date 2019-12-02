@@ -8,6 +8,7 @@ TagManager:
   - MonsterBullet
   - Bullet
   - Platform
+  - Coin
   layers:
   - Default
   - TransparentFX
@@ -18,9 +19,9 @@ TagManager:
   - 
   - 
   - Platform
-  - 
-  - 
-  - 
+  - Coin
+  - Monster
+  - Player
   - 
   - 
   - 

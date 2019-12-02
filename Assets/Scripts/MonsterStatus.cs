@@ -7,11 +7,12 @@ public class MonsterStatus : MonoBehaviour
 {
 	public PlayerStauts playerStauts;
 
-	public GameObject monster;
-	private Rigidbody2D monsterRigid;
-
 	public GameObject bulletPrefab;
+	public GameObject coinPrefab;
+	public GameObject monster;
 
+	private Rigidbody2D monsterRigid;
+	
 	public Image monsterHpBar;
 
 
@@ -68,7 +69,15 @@ public class MonsterStatus : MonoBehaviour
 	private void MonsterDie()
 	{
 		ResetTime();
+
+		int randomCoin = Random.Range(1, 6);
+		for (int i = 0; i < randomCoin; i++)
+		{
+			GameObject coin = Instantiate(coinPrefab, transform.position, transform.rotation);
+		}
+
 		isDie = true;
+		
 		monsterRigid.AddForce(new Vector2(300f, 100f));
 		Destroy(monster, 1f);
 	}
