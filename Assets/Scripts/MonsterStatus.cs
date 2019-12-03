@@ -22,6 +22,9 @@ public class MonsterStatus : MonoBehaviour
 
 	public bool isDie = false;
 
+	private int randomCoin;
+	private int randomStone;
+
 	public float monsterHp { get; set; }
 	public float monsterDamage { get; set; }
 
@@ -69,37 +72,56 @@ public class MonsterStatus : MonoBehaviour
 
 	private void MonsterDie()
 	{
+
 		ResetTime();
 		GetCoin();
 		GetStone();
 
 		isDie = true;
 		
-		monsterRigid.AddForce(new Vector2(300f, 100f));
-		Destroy(monster, 1f);
+		monsterRigid.AddForce(new Vector2(0, 100f));
+		Destroy(monster, 3f);
 	}
 
 	private void GetCoin()
 	{
-		int randomCoin = Random.Range(0, 6);
-		for (int i = 0; i < randomCoin; i++)
+		randomCoin = Random.Range(0, 6);
+		if(randomCoin != 0)
+		{
+			StartCoroutine(GetCoinCount(randomCoin));
+		}
+	}
+
+	IEnumerator GetCoinCount(int coinCount)
+	{
+		for (int i = 0; i < coinCount; i++)
 		{
 			GameObject coin = Instantiate(coinPrefab, transform.position, transform.rotation);
+			yield return new WaitForSeconds(0.1f);
 		}
 	}
 
 	private void GetStone()
 	{
-		int randomStone = Random.Range(0, 4);
-		for(int i = 0; i < randomStone; i++)
+		randomStone = Random.Range(0, 4);
+		if(randomStone != 0)
+		{
+			StartCoroutine(GetStoneCount(randomStone));
+		}
+	}
+
+	IEnumerator GetStoneCount(int stoneCount)
+	{
+		for (int i = 0; i < stoneCount; i++)
 		{
 			GameObject stone = Instantiate(stonePrefab, transform.position, transform.rotation);
+			yield return new WaitForSeconds(0.1f);
 		}
 	}
 
 	private void Attack()
 	{
-		if (!playerStauts.isDie)
+		if (!playerStauts.isDie && !isDie)
 		{
 			GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
 		}

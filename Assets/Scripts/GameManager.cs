@@ -18,6 +18,12 @@ public class GameManager : MonoBehaviour
 	public GameObject coinTarget;
 	public GameObject stoneTarget;
 
+	public AudioSource coinAudioSource;
+	public AudioSource stoneAudioSource;
+
+	public AudioClip coinAudioClip;
+	public AudioClip stoneAudioClip;
+
 	public Text coinText;
 	public Text stoneText;
 
@@ -56,6 +62,8 @@ public class GameManager : MonoBehaviour
 		stone = 0;
 		coinText.text = coin.ToString();
 		stoneText.text = stone.ToString();
+		coinAudioSource.clip = coinAudioClip;
+		stoneAudioSource.clip = stoneAudioClip;
 	}
 
 
@@ -114,12 +122,14 @@ public class GameManager : MonoBehaviour
 
 	public void AddCoin()
 	{
+		coinAudioSource.Play();
 		coin += 10;
 		coinText.text = coin.ToString();
 	}
 
 	public void AddStone()
 	{
+		stoneAudioSource.Play();
 		stone += 1;
 		stoneText.text = stone.ToString();
 	}
