@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 622}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -45,7 +45,7 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 997
-  m_MinSize: {x: 950, y: 622}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -111,10 +111,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 913, y: 572}
-  m_MaxSize: {x: 22008, y: 14048}
+  m_MinSize: {x: 917, y: 572}
+  m_MaxSize: {x: 22012, y: 14048}
   vertical: 0
-  controlID: 174
+  controlID: 154
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -136,10 +136,10 @@ MonoBehaviour:
     y: 0
     width: 1589
     height: 947
-  m_MinSize: {x: 636, y: 572}
-  m_MaxSize: {x: 18006, y: 14048}
+  m_MinSize: {x: 640, y: 572}
+  m_MaxSize: {x: 18010, y: 14048}
   vertical: 1
-  controlID: 50
+  controlID: 102
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -162,10 +162,10 @@ MonoBehaviour:
     y: 0
     width: 1589
     height: 784
-  m_MinSize: {x: 636, y: 448}
-  m_MaxSize: {x: 18006, y: 10024}
+  m_MinSize: {x: 640, y: 448}
+  m_MaxSize: {x: 18010, y: 10024}
   vertical: 0
-  controlID: 51
+  controlID: 103
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -190,7 +190,7 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 448}
   m_MaxSize: {x: 4002, y: 8048}
   vertical: 1
-  controlID: 135
+  controlID: 40
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -238,8 +238,8 @@ MonoBehaviour:
     y: 376
     width: 1075
     height: 408
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 224}
+  m_MaxSize: {x: 4002, y: 4024}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -291,8 +291,8 @@ MonoBehaviour:
     y: 0
     width: 244
     height: 784
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 204, y: 224}
+  m_MaxSize: {x: 4004, y: 4024}
   m_ActualView: {fileID: 21}
   m_Panes:
   - {fileID: 21}
@@ -387,10 +387,10 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -960
-    m_HBaseRangeMax: 960
-    m_VBaseRangeMin: -540
-    m_VBaseRangeMax: 540
+    m_HBaseRangeMin: -536.5
+    m_HBaseRangeMax: 536.5
+    m_VBaseRangeMin: -185.5
+    m_VBaseRangeMax: 185.5
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -410,7 +410,7 @@ MonoBehaviour:
       y: 17
       width: 1073
       height: 371
-    m_Scale: {x: 0.34351853, y: 0.34351853}
+    m_Scale: {x: 1, y: 1}
     m_Translation: {x: 536.5, y: 185.5}
     m_MarginLeft: 0
     m_MarginRight: 0
@@ -418,10 +418,10 @@ MonoBehaviour:
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -1561.7789
-      y: -540
-      width: 3123.5579
-      height: 1080
+      x: -536.5
+      y: -185.5
+      width: 1073
+      height: 371
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_TargetTexture: {fileID: 0}
@@ -462,9 +462,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -2.9688933, y: 0.8097641, z: 320.41296}
+    m_Target: {x: -2.5272598, y: 0.5327327, z: 413.542}
     speed: 2
-    m_Value: {x: -2.9688933, y: 0.8097641, z: 320.41296}
+    m_Value: {x: -2.5272598, y: 0.5327327, z: 413.542}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -496,9 +496,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 5.5312643
+    m_Target: 7.2031446
     speed: 2
-    m_Value: 5.5312643
+    m_Value: 7.2031446
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -684,20 +684,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/CasualGameSounds
+    - Assets/Resources/Sprites
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/CasualGameSounds
+  - Assets/Resources/Sprites
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\Hoeya\Desktop\WeAreAnimals
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 32290000
-    m_LastClickedID: 10546
-    m_ExpandedIDs: 00000000102600002226000000ca9a3b
+    m_SelectedIDs: 8e2f0000
+    m_LastClickedID: 12174
+    m_ExpandedIDs: 00000000cc2d0000d82d000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -725,7 +725,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000001026000022260000
+    m_ExpandedIDs: 00000000cc2d0000d82d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -811,7 +811,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: d4fbffff
+      m_ExpandedIDs: e0edffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
