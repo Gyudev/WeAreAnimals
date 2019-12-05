@@ -1367,7 +1367,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -802572259
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 58619361739cb884387dc4b734316240, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4248,7 +4248,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -802572259
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 99df9a1da7bb12d48be0296611a701a0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4312,7 +4312,11 @@ MonoBehaviour:
   playerStauts: {fileID: 586339728}
   bulletPrefab: {fileID: 1553154239029507733, guid: 7ae83dbbe74e35b499ce358d2ce04790,
     type: 3}
-  coinPrefab: {fileID: 2257812803318608109, guid: 9fab34d7dd2bcfb4d95b8c8d2c202672,
+  bronzeCoinPrefab: {fileID: 6984997802677348322, guid: 69dc0b67ac7c4004eaf953fe9b513fa3,
+    type: 3}
+  silverCoinPrefab: {fileID: 7017460945085996835, guid: d58ab21f029fc94429aa6da391a1b0de,
+    type: 3}
+  goldCoinPrefab: {fileID: 2257812803318608109, guid: 9fab34d7dd2bcfb4d95b8c8d2c202672,
     type: 3}
   stonePrefab: {fileID: 778753468931091073, guid: ec819138c90c0d94185f31b028897002,
     type: 3}

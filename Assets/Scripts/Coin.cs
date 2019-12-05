@@ -19,7 +19,17 @@ public class Coin : MonoBehaviour
 	private void Start()
 	{
 		coinRigid = GetComponent<Rigidbody2D>();
-		if (gameObject.tag == "Coin")
+		if (gameObject.tag == "Bronze Coin")
+		{
+			int randomForceX = Random.Range(-60, 61);
+			coinRigid.AddForce(new Vector2(randomForceX, 100));
+		}
+		else if (gameObject.tag == "Silver Coin")
+		{
+			int randomForceX = Random.Range(-60, 61);
+			coinRigid.AddForce(new Vector2(randomForceX, 100));
+		}
+		else if (gameObject.tag == "Gold Coin")
 		{
 			int randomForceX = Random.Range(-60, 61);
 			coinRigid.AddForce(new Vector2(randomForceX, 100));
@@ -39,7 +49,15 @@ public class Coin : MonoBehaviour
 		if(waitingTimer <= timer)
 		{
 			coinRigid.gravityScale = 0.1f;
-			if (gameObject.tag == "Coin")
+			if (gameObject.tag == "Bronze Coin")
+			{
+				gameObject.transform.position = Vector3.Lerp(gameObject.transform.position, gameManager.coinTarget.transform.position, 5f * Time.deltaTime);
+			}
+			else if (gameObject.tag == "Silver Coin")
+			{
+				gameObject.transform.position = Vector3.Lerp(gameObject.transform.position, gameManager.coinTarget.transform.position, 5f * Time.deltaTime);
+			}
+			else if (gameObject.tag == "Gold Coin")
 			{
 				gameObject.transform.position = Vector3.Lerp(gameObject.transform.position, gameManager.coinTarget.transform.position, 5f * Time.deltaTime);
 			}
@@ -54,7 +72,19 @@ public class Coin : MonoBehaviour
 	{
 		if(collision.tag == "CoinBackground")
 		{
-			gameManager.AddCoin();
+			switch (gameObject.tag)
+			{
+				case "Bronze Coin":
+					gameManager.AddCoin(1);
+					break;
+				case "Silver Coin":
+					gameManager.AddCoin(10);
+					break;
+				case "Gold Coin":
+					gameManager.AddCoin(50);
+					break;
+			}
+			
 			Destroy(gameObject, 0f);
 		}
 		else if(collision.tag == "StoneBackground")

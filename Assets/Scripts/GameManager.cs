@@ -120,10 +120,10 @@ public class GameManager : MonoBehaviour
 		SceneManager.LoadScene(0);
 	}
 
-	public void AddCoin()
+	public void AddCoin(int coinValue)
 	{
 		coinAudioSource.Play();
-		coin += 10;
+		coin += coinValue;
 		coinText.text = coin.ToString();
 	}
 

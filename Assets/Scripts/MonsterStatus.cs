@@ -8,7 +8,9 @@ public class MonsterStatus : MonoBehaviour
 	public PlayerStauts playerStauts;
 
 	public GameObject bulletPrefab;
-	public GameObject coinPrefab;
+	public GameObject bronzeCoinPrefab;
+	public GameObject silverCoinPrefab;
+	public GameObject goldCoinPrefab;
 	public GameObject stonePrefab;
 	public GameObject monster;
 
@@ -22,7 +24,9 @@ public class MonsterStatus : MonoBehaviour
 
 	public bool isDie = false;
 
-	private int randomCoin;
+	private int randomBronzeCoin;
+	private int randomSilverCoin;
+	private int randomGoldCoin;
 	private int randomStone;
 
 	public float monsterHp { get; set; }
@@ -85,28 +89,55 @@ public class MonsterStatus : MonoBehaviour
 
 	private void GetCoin()
 	{
-		randomCoin = Random.Range(0, 6);
-		if(randomCoin != 0)
+		randomBronzeCoin = Random.Range(0, 16);
+		randomSilverCoin = Random.Range(0, 11);
+		randomGoldCoin = Random.Range(0, 6);
+		if (randomBronzeCoin != 0)
 		{
-			StartCoroutine(GetCoinCount(randomCoin));
+			StartCoroutine(GetBronzeCoinCount(randomBronzeCoin));
+		}
+		if(randomSilverCoin != 0)
+		{
+			StartCoroutine(GetSilverCoinCount(randomSilverCoin));
+		}
+		if(randomGoldCoin != 0)
+		{
+			StartCoroutine(GetGoldCoinCount(randomGoldCoin));
 		}
 	}
 
-	IEnumerator GetCoinCount(int coinCount)
+	IEnumerator GetBronzeCoinCount(int coinCount)
 	{
 		for (int i = 0; i < coinCount; i++)
 		{
-			GameObject coin = Instantiate(coinPrefab, transform.position, transform.rotation);
+			GameObject coin = Instantiate(bronzeCoinPrefab, transform.position, transform.rotation);
 			yield return new WaitForSeconds(0.1f);
 		}
 	}
 
+	IEnumerator GetSilverCoinCount(int coinCount)
+	{
+		for (int i = 0; i < coinCount; i++)
+		{
+			GameObject coin = Instantiate(silverCoinPrefab, transform.position, transform.rotation);
+			yield return new WaitForSeconds(0.1f);
+		}
+	}
+	
+	IEnumerator GetGoldCoinCount(int coinCount)
+	{
+		for (int i = 0; i < coinCount; i++)
+		{
+			GameObject coin = Instantiate(goldCoinPrefab, transform.position, transform.rotation);
+			yield return new WaitForSeconds(0.1f);
+		}
+	}
 	private void GetStone()
 	{
 		randomStone = Random.Range(0, 4);
 		if(randomStone != 0)
 		{
-			StartCoroutine(GetStoneCount(randomStone));
+			StartCoroutine(GetStoneCount(randomStone));s
 		}
 	}
 

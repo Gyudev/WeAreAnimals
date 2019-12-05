@@ -8,10 +8,12 @@ TagManager:
   - MonsterBullet
   - Bullet
   - Platform
-  - Coin
   - CoinBackground
   - StoneBackground
   - Stone
+  - Gold Coin
+  - Bronze Coin
+  - Silver Coin
   layers:
   - Default
   - TransparentFX
@@ -51,6 +53,9 @@ TagManager:
     locked: 0
   - name: Background
     uniqueID: 2794926055
+    locked: 0
+  - name: Coin
+    uniqueID: 233630819
     locked: 0
   - name: Bullet
     uniqueID: 2375056507
