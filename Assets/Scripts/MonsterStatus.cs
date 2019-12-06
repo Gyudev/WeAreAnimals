@@ -90,8 +90,8 @@ public class MonsterStatus : MonoBehaviour
 	private void GetCoin()
 	{
 		randomBronzeCoin = Random.Range(0, 16);
-		randomSilverCoin = Random.Range(0, 11);
-		randomGoldCoin = Random.Range(0, 6);
+		randomSilverCoin = Random.Range(0, 9);
+		randomGoldCoin = Random.Range(0, 4);
 		if (randomBronzeCoin != 0)
 		{
 			StartCoroutine(GetBronzeCoinCount(randomBronzeCoin));
@@ -137,7 +137,7 @@ public class MonsterStatus : MonoBehaviour
 		randomStone = Random.Range(0, 4);
 		if(randomStone != 0)
 		{
-			StartCoroutine(GetStoneCount(randomStone));s
+			StartCoroutine(GetStoneCount(randomStone));
 		}
 	}
 

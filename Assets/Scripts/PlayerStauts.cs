@@ -76,7 +76,7 @@ public class PlayerStauts : MonoBehaviour
 		if (collision.tag == "MonsterBullet")
 		{
 			playerHpBar.fillAmount -= monsterStatus.monsterDamage / playerHp;
-			if (playerHpBar.fillAmount <= 0.1f)
+			if (playerHpBar.fillAmount <= 0.001f)
 			{
 				PlayerDie();
 			}
@@ -116,7 +116,7 @@ public class PlayerStauts : MonoBehaviour
 	private void Jump()
 	{
 		// 캐릭터의 y속도가 0이거나 죽지 않았을때 점프
-		if (playerRigid.velocity.y == 0 && !isDie)
+		if (!isDie && playerRigid.velocity.y == 0)
 		{
 			playerAnim.SetBool("isJump", true);
 			PlaySound("Jump");
