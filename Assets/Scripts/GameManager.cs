@@ -24,6 +24,10 @@ public class GameManager : MonoBehaviour
 	public AudioClip coinAudioClip;
 	public AudioClip stoneAudioClip;
 
+	public MonsterStatus monsterStatus;
+	public GameObject monsterPrefab;
+	public GameObject moinsterRespawnPosition;
+
 	public Text coinText;
 	public Text stoneText;
 
@@ -64,6 +68,7 @@ public class GameManager : MonoBehaviour
 		stoneText.text = stone.ToString();
 		coinAudioSource.clip = coinAudioClip;
 		stoneAudioSource.clip = stoneAudioClip;
+		GameObject monster = Instantiate(monsterPrefab, moinsterRespawnPosition.transform.position, moinsterRespawnPosition.transform.rotation);
 	}
 
 
@@ -74,6 +79,11 @@ public class GameManager : MonoBehaviour
 		{
 			isStop = false;
 			StartCoroutine(CountdownTimer(4));
+		}
+
+		if (monsterStatus.isDie)
+		{
+			
 		}
     }
 
@@ -97,6 +107,11 @@ public class GameManager : MonoBehaviour
 		submenuPanel.gameObject.SetActive(false);
 
 		Time.timeScale = 1;
+	}
+
+	private void MonsterRespawn()
+	{
+		GameObject monster = Instantiate(monsterPrefab, transform.position, transform.rotation);
 	}
 
 	private void StopButton()

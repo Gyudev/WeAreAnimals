@@ -132,6 +132,7 @@ public class MonsterStatus : MonoBehaviour
 			yield return new WaitForSeconds(0.1f);
 		}
 	}
+
 	private void GetStone()
 	{
 		randomStone = Random.Range(0, 4);
