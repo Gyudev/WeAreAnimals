@@ -24,10 +24,10 @@ public class PlayerStauts : MonoBehaviour
 	private float timeSpawnBullet;
 	public float spawnBullet = 1f;
 
-	public bool isDie = false;
+	public static bool isDie = false;
 
 	public float playerHp { get; set; }
-	public float playerDamage { get; set; }
+	public static float playerDamage { get; set; }
 
 	private void Awake()
 	{
@@ -44,8 +44,9 @@ public class PlayerStauts : MonoBehaviour
 
 	private void Start()
 	{
+		isDie = false;
 		playerHp = 10f;
-		playerDamage = 10f;
+		playerDamage = 3f;
 	}
 
 	private void Update()
@@ -55,7 +56,7 @@ public class PlayerStauts : MonoBehaviour
 
 	private void FixedUpdate()
 	{
-		if (!isDie || !monsterStatus.isDie)
+		if (!isDie || !MonsterStatus.isDie)
 		{
 			timeSpawnBullet += Time.deltaTime;
 			if (spawnBullet <= timeSpawnBullet)
@@ -75,7 +76,7 @@ public class PlayerStauts : MonoBehaviour
 	{
 		if (collision.tag == "MonsterBullet")
 		{
-			playerHpBar.fillAmount -= monsterStatus.monsterDamage / playerHp;
+			playerHpBar.fillAmount -= MonsterStatus.monsterDamage / playerHp;
 			if (playerHpBar.fillAmount <= 0.001f)
 			{
 				PlayerDie();
@@ -99,7 +100,7 @@ public class PlayerStauts : MonoBehaviour
 
 	private void Attack()
 	{
-		if (!isDie && !monsterStatus.isDie)
+		if (!isDie && !MonsterStatus.isDie)
 		{
 			PlaySound("Attack");
 			playerAnim.SetTrigger("doAttack");

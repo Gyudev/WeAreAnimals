@@ -306,7 +306,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 513b922c485b7fd4b8d09344ff2decfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStauts: {fileID: 0}
   bulletPrefab: {fileID: 1553154239029507733, guid: 7ae83dbbe74e35b499ce358d2ce04790,
     type: 3}
   bronzeCoinPrefab: {fileID: 6984997802677348322, guid: 69dc0b67ac7c4004eaf953fe9b513fa3,
@@ -319,8 +318,7 @@ MonoBehaviour:
     type: 3}
   monster: {fileID: 4030966198133148732}
   monsterHpBar: {fileID: 4030966196536589115}
-  spawnBullet: 2
-  isDie: 0
+  spawnBullet: 1.5
 --- !u!82 &4030966198133148730
 AudioSource:
   m_ObjectHideFlags: 0

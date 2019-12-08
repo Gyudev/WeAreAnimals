@@ -24,7 +24,6 @@ public class GameManager : MonoBehaviour
 	public AudioClip coinAudioClip;
 	public AudioClip stoneAudioClip;
 
-	public MonsterStatus monsterStatus;
 	public GameObject monsterPrefab;
 	public GameObject moinsterRespawnPosition;
 
@@ -81,10 +80,6 @@ public class GameManager : MonoBehaviour
 			StartCoroutine(CountdownTimer(4));
 		}
 
-		if (monsterStatus.isDie)
-		{
-			
-		}
     }
 
 	IEnumerator CountdownTimer(float countTime)
@@ -107,11 +102,6 @@ public class GameManager : MonoBehaviour
 		submenuPanel.gameObject.SetActive(false);
 
 		Time.timeScale = 1;
-	}
-
-	private void MonsterRespawn()
-	{
-		GameObject monster = Instantiate(monsterPrefab, transform.position, transform.rotation);
 	}
 
 	private void StopButton()

@@ -1364,7 +1364,6 @@ MonoBehaviour:
   audioAttack: {fileID: 8300000, guid: 881e3f52c86c94f26a60718d35627cd8, type: 3}
   audioDie: {fileID: 8300000, guid: a0010a1a0c474473b81729eb770c485f, type: 3}
   spawnBullet: 0.7
-  isDie: 0
 --- !u!95 &586339729
 Animator:
   serializedVersion: 3
@@ -1801,8 +1800,6 @@ MonoBehaviour:
   stoneAudioSource: {fileID: 75974824}
   coinAudioClip: {fileID: 8300000, guid: 79180f511d89441b9aa23ccae1992fe0, type: 3}
   stoneAudioClip: {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}
-  monsterStatus: {fileID: 4030966198133148729, guid: caf9a39a84fa2f14da33d6739a33c63d,
-    type: 3}
   monsterPrefab: {fileID: 4030966198133148732, guid: caf9a39a84fa2f14da33d6739a33c63d,
     type: 3}
   moinsterRespawnPosition: {fileID: 916386717}
@@ -1831,8 +1828,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 916386718}
+  - component: {fileID: 916386719}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: MonsterSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1852,6 +1850,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &916386719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 916386717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7c633e8df52b1c4687e88b14459ce9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monsterStatus: {fileID: 4030966198133148729, guid: caf9a39a84fa2f14da33d6739a33c63d,
+    type: 3}
+  spawnPoints: {fileID: 916386718}
 --- !u!1 &1227080942
 GameObject:
   m_ObjectHideFlags: 0

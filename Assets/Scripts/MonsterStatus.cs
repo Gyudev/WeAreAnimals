@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class MonsterStatus : MonoBehaviour
 {
-	public PlayerStauts playerStauts;
+	private MonsterRespawn monsterRespawn;
 
 	public GameObject bulletPrefab;
 	public GameObject bronzeCoinPrefab;
@@ -22,7 +22,7 @@ public class MonsterStatus : MonoBehaviour
 	private float timeSpawnBullet;
 	public float spawnBullet = 2f;
 
-	public bool isDie = false;
+	public static bool isDie = false;
 
 	private int randomBronzeCoin;
 	private int randomSilverCoin;
@@ -30,13 +30,19 @@ public class MonsterStatus : MonoBehaviour
 	private int randomStone;
 
 	public float monsterHp { get; set; }
-	public float monsterDamage { get; set; }
+	public static float monsterDamage { get; set; }
+
+	private void Awake()
+	{
+		monsterRespawn = GameObject.Find("MonsterSpawner").GetComponent<MonsterRespawn>();
+	}
 
 	private void Start()
     {
+
 		monsterRigid = GetComponent<Rigidbody2D>();
-		monsterHp = 5f;
-		monsterDamage = 0f;
+		monsterHp = 12f;
+		monsterDamage = 2f;
     }
 
     private void Update()
@@ -46,7 +52,7 @@ public class MonsterStatus : MonoBehaviour
 
 	private void FixedUpdate()
 	{
-		if (!isDie || !playerStauts.isDie)
+		if (!isDie || !PlayerStauts.isDie)
 		{
 			timeSpawnBullet += Time.deltaTime;
 			if (spawnBullet <= timeSpawnBullet)
@@ -61,7 +67,7 @@ public class MonsterStatus : MonoBehaviour
 	{
 		if(collision.tag == "Bullet")
 		{
-			monsterHpBar.fillAmount -= playerStauts.playerDamage / monsterHp;
+			monsterHpBar.fillAmount -= PlayerStauts.playerDamage / monsterHp;
 
 			if (monsterHpBar.fillAmount <= 0.1f)
 			{
@@ -84,7 +90,9 @@ public class MonsterStatus : MonoBehaviour
 		isDie = true;
 		
 		monsterRigid.AddForce(new Vector2(0, 100f));
-		Destroy(monster, 3f);
+		Destroy(monster, 2f);
+
+		monsterRespawn.Invoke("CreateMonster", 3f);
 	}
 
 	private void GetCoin()
@@ -153,7 +161,7 @@ public class MonsterStatus : MonoBehaviour
 
 	private void Attack()
 	{
-		if (!playerStauts.isDie && !isDie)
+		if (!PlayerStauts.isDie && !isDie)
 		{
 			GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
 		}

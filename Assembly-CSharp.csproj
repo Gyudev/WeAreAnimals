@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\csCameraSize.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\MonsterBullet.cs" />
+    <Compile Include="Assets\Scripts\MonsterRespawn.cs" />
     <Compile Include="Assets\Scripts\MonsterStatus.cs" />
     <Compile Include="Assets\Scripts\PlayerStauts.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
