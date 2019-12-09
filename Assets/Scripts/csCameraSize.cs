@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class csCameraSize : MonoBehaviour {
     
-    public float tw = 1280;
-    public float th = 720;
+    public float tw = 1920;
+    public float th = 1080;
     
     private void Awake()
     {
