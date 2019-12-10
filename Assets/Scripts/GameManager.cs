@@ -122,7 +122,7 @@ public class GameManager : MonoBehaviour
 
 	private void RestartButton()
 	{
-		SceneManager.LoadScene(0);
+		SceneManager.LoadScene(1);
 	}
 
 	public void AddCoin(int coinValue)
@@ -141,7 +141,8 @@ public class GameManager : MonoBehaviour
 
 	private void ExitButton()
 	{
-
+		Time.timeScale = 1;
+		SceneManager.LoadScene(0);
 	}
 
 	private void Continue()
