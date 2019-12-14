@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\MonsterBullet.cs" />
     <Compile Include="Assets\Scripts\MonsterRespawn.cs" />
     <Compile Include="Assets\Scripts\MonsterStatus.cs" />
+    <Compile Include="Assets\Scripts\NextStage.cs" />
     <Compile Include="Assets\Scripts\PlayerStauts.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/Hoeya/Desktop/WeAreAnimals/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
