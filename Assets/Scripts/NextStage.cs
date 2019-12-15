@@ -1,18 +1,32 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class NextStage : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+	private Button startStage;
+
+
+	private void Start()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         
     }
+
+	public void StartStage(string stageNumber)
+	{
+		switch (stageNumber)
+		{
+			case "1-1":
+				SceneManager.LoadScene(1);
+				break;
+		}
+
+	}
 }
