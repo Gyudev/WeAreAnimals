@@ -8,6 +8,7 @@ public class NextStage : MonoBehaviour
 {
 	private Button startStage;
 
+	public static string globalStageNumber;
 
 	private void Start()
     {
@@ -24,6 +25,8 @@ public class NextStage : MonoBehaviour
 		switch (stageNumber)
 		{
 			case "1-1":
+				globalStageNumber = "1-1";
+				DontDestroyOnLoad(gameObject);
 				SceneManager.LoadScene(1);
 				break;
 		}

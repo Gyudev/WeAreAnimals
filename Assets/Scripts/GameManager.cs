@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
 
 	public Text coinText;
 	public Text stoneText;
+	public Text stageText;
 
 	private Text countdownText;
 
@@ -68,6 +69,7 @@ public class GameManager : MonoBehaviour
 		coinAudioSource.clip = coinAudioClip;
 		stoneAudioSource.clip = stoneAudioClip;
 		GameObject monster = Instantiate(monsterPrefab, moinsterRespawnPosition.transform.position, moinsterRespawnPosition.transform.rotation);
+		stageText.text = "STAGE : " + NextStage.globalStageNumber;
 	}
 
 

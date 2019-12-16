@@ -1754,7 +1754,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'STAGE : 1-1'
+  m_Text: 'STAGE :'
 --- !u!222 &821505751
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1803,6 +1803,7 @@ MonoBehaviour:
   moinsterRespawnPosition: {fileID: 916386717}
   coinText: {fileID: 1408323190}
   stoneText: {fileID: 1738739101}
+  stageText: {fileID: 821505750}
 --- !u!4 &844880505
 Transform:
   m_ObjectHideFlags: 0
