@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\CharacterMove.cs" />
     <Compile Include="Assets\Scripts\Coin.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\MainMenuManager.cs" />
     <Compile Include="Assets\Scripts\MonsterBullet.cs" />
     <Compile Include="Assets\Scripts\MonsterRespawn.cs" />
     <Compile Include="Assets\Scripts\MonsterStatus.cs" />
